@@ -15,6 +15,7 @@
 // containing the names of everyone on your team.
 std::vector<std::string> GetTeamMembers() {
   // Your code here
+  std::vector:: 
   return {};
 }
 
@@ -42,6 +43,11 @@ std::string GetStrategy() {
 //   - Bids must be non-negative integers.
 void GenerateBids(int rounds, int budget, std::string output_filename) {
   // Your code here
+  std::ofstream outfile(output_filename);
+  int bid_per_round = budget / rounds + 1;
+  for (int i = 0; i < rounds; ++i) {
+    outfile << bid_per_round << "\n";
+  }
 }
 
 // ============================================================================
@@ -52,7 +58,7 @@ void GenerateBids(int rounds, int budget, std::string output_filename) {
 int main() {
   // You can write code here to call your functions and see if they work.
   // Example:
-  // GenerateBids(10, 100, "test_output.txt");
+  GenerateBids(10, 100, "test_output.txt");
   
   return 0;
 }
